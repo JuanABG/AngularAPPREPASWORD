@@ -3,7 +3,7 @@
       [attr.role]="(isWeb$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isWeb$ | async) ? 'over' : 'side'"
       [opened]="(isWeb$ | async) === false">
-    <!-- <mat-toolbar>Menu</mat-toolbar> -->
+    <mat-toolbar>Menu</mat-toolbar> 
     <mat-nav-list>
       <a mat-list-item href="/inicio"><span class="material-symbols-outlined">
         align_justify_flex_start

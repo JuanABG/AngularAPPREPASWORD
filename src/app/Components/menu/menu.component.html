@@ -35,7 +35,24 @@
         *ngIf="isWeb$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>APPREPASWORD</span>
+      <span class="mat-toolbar-row">
+        <div class="content">
+        APPREPASWORD </div>
+        <div class="icons"> 
+          <span class="material-symbols-outlined">
+            account_circle
+            </span>
+            <span class="material-symbols-outlined">
+              mail
+              </span>
+              <span class="material-symbols-outlined">
+                notifications
+                </span>
+        </div>
+        <div class="per">
+          <ngx-avatar name="Isabella Segura"></ngx-avatar>
+        </div>
+      </span>
     </mat-toolbar>
     <div class="container">
     <router-outlet></router-outlet>

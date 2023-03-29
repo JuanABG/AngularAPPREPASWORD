@@ -19,3 +19,16 @@
 .container{
   margin: 20px;
 }
+.icons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.per{
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+.content{
+  width: 90%;
+}

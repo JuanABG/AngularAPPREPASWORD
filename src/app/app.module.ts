@@ -17,6 +17,10 @@ import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { TablasComponent } from './Components/tablas/tablas.component';
 import { RepositorioComponent } from './Components/repositorio/repositorio.component';
 import { ReportesComponent } from './Components/reportes/reportes.component';
+import { AvatarModule } from 'ngx-avatar';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { ReportesComponent } from './Components/reportes/reportes.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    AvatarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

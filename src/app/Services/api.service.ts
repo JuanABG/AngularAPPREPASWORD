@@ -8,12 +8,12 @@ export class ApiService {
 
   constructor( public http: HttpClient) {
   }
-   url= "https://localhost:7292/";
+   url= "https://localhost:7206/api/";
 
   public async  get(controlador:String){
 
    var response:any
-   await this.http.get(this.url+controlador).subscribe(res=>{
+   await this.http.get(this.url+controlador).toPromise().then(res=>{
      response=res
    });
     return response

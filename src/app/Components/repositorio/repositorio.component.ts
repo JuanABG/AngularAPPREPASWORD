@@ -26,7 +26,7 @@ export class RepositorioComponent implements OnInit {
 
     public async GetRepositorios(){
         await this.Api.get("Repositorios").then((res)=>{
-          this.column=res
+           this.column=res
           this.displayedColumns=Object.keys(this.column[0])
           //this.loadTable([res[0]])
           this.dataSource.data=res

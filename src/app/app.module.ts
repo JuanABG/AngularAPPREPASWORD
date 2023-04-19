@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PanelprincipalComponent } from './Components/panelprincipal/panelprincipal.component';
@@ -19,6 +18,11 @@ import { RepositorioComponent } from './Components/repositorio/repositorio.compo
 import { ReportesComponent } from './Components/reportes/reportes.component';
 import { AvatarModule } from 'ngx-avatar';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -44,7 +48,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    AvatarModule
+    AvatarModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatTableModule
     
   ],
   providers: [],

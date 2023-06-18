@@ -16,12 +16,27 @@ import { UsuarioComponent } from './Components/usuario/usuario.component';
 import { TablasComponent } from './Components/tablas/tablas.component';
 import { RepositorioComponent } from './Components/repositorio/repositorio.component';
 import { ReportesComponent } from './Components/reportes/reportes.component';
-import { AvatarModule } from 'ngx-avatar';
+import { AvatarModule } from 'ngx-avatars';
 import { HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
+import { TableTemplateComponent } from './Components/table-template/table-template.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormUsuarioComponent } from './Components/form-usuario/form-usuario.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormRepositorioComponent } from './Components/form-repositorio/form-repositorio.component';
+import { FormReportesComponent } from './Components/form-reportes/form-reportes.component';
+import { LoginComponent } from './Components/login/login.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
+
 
 
 
@@ -35,7 +50,13 @@ import {MatTableModule} from '@angular/material/table';
     UsuarioComponent,
     TablasComponent,
     RepositorioComponent,
-    ReportesComponent
+    ReportesComponent,
+    TableTemplateComponent,
+    FormUsuarioComponent,
+    FormRepositorioComponent,
+    FormReportesComponent,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -51,9 +72,15 @@ import {MatTableModule} from '@angular/material/table';
     AvatarModule,
     MatInputModule,
     MatPaginatorModule,
+    MatTableModule,
     MatFormFieldModule,
-    MatTableModule
-    
+    MatDialogModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,9 +21,6 @@ const routes: Routes = [
     path:'repositorio', component:RepositorioComponent
   },
   {
-    path:'tablas', component:TablasComponent
-  },
-  {
     path:'usuarios', component:UsuarioComponent
   }
 ];

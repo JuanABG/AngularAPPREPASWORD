@@ -25,16 +25,16 @@ export class ApiService {
     });
     return response
     }
-    public async  put(controlador:String,data:object,id:number){
+    public async  put(controlador:String,data:object,id:string){
       var response:any
       await this.http.put(this.url+controlador+'/'+id, data).subscribe(res=>{
       response=res
     });
       return response
     }
-    public async  delete(controlador:String, id:number){
+    public async  delete(controlador:String, id:String){
       var response:any
-      await this.http.delete(this.url+controlador+'/'+id).subscribe(res=>{
+      await this.http.delete(this.url+controlador+"/"+id).subscribe(res=>{
       response=res
     });
       return response

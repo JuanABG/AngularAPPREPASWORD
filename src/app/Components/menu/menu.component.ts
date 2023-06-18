@@ -17,5 +17,9 @@ export class MenuComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-
+  
+  async onSubmit() {
+    localStorage.setItem('login','logout');
+    window.location.reload();
+}
 }

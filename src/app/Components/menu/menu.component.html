@@ -1,61 +1,53 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isWeb$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isWeb$ | async) ? 'over' : 'side'"
-      [opened]="(isWeb$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar> 
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isWeb$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isWeb$ | async) ? 'over' : 'side'" [opened]="(isWeb$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/inicio"><span class="material-symbols-outlined">
-        align_justify_flex_start
-        </span>Inicio</a>
       <a mat-list-item href="/panel-principal"><span class="material-symbols-outlined">
-        dns
+          dns
         </span>Panel Principal</a>
       <a mat-list-item href="/usuarios"><span class="material-symbols-outlined">
-        person
+          person
         </span>Usuarios</a>
-      <a mat-list-item href="/tablas"><span class="material-symbols-outlined">
-        dashboard
-        </span>Tablas</a>
       <a mat-list-item href="/repositorio"><span class="material-symbols-outlined">
-        all_inbox
+          all_inbox
         </span>Repositorio</a>
       <a mat-list-item href="/reportes"><span class="material-symbols-outlined">
-        lab_profile
+          lab_profile
         </span>Reportes</a>
+      <button class="logout" mat-raised-button (click)="onSubmit()"><span class="material-symbols-outlined">
+        power_settings_new
+        </span>cerrar sesion</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+    <mat-toolbar class="colorPrimary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isWeb$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="mat-toolbar-row">
         <div class="content">
-        APPREPASWORD </div>
-        <div class="icons"> 
+          APPREPASWORD
+        </div>
+        <div class="icons">
           <span class="material-symbols-outlined">
             account_circle
-            </span>
-            <span class="material-symbols-outlined">
-              mail
-              </span>
-              <span class="material-symbols-outlined">
-                notifications
-                </span>
+          </span>
+          <span class="material-symbols-outlined">
+            mail
+          </span>
+          <span class="material-symbols-outlined">
+            notifications
+          </span>
         </div>
         <div class="per">
-          <ngx-avatar name="Isabella Segura"></ngx-avatar>
+          <ngx-avatars name="Isabella Segura"></ngx-avatars>
         </div>
       </span>
     </mat-toolbar>
     <div class="container">
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

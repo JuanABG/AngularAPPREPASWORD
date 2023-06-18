@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { FormRepositorioComponent } from '../form-repositorio/form-repositorio.component';
 
 @Component({
   selector: 'app-repositorio',
@@ -10,44 +12,20 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./repositorio.component.css']
 })
 export class RepositorioComponent implements OnInit {
-  column:object;
-  displayedColumns: string[] = [];
-  dataSource: MatTableDataSource<any>;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  title = "Repositorio"
+  serviceName = "Repositorios"
 
-    constructor(public Api: ApiService){
-      this.dataSource= new MatTableDataSource();
-     }
+  constructor(public dialog: MatDialog) {
+  }
 
-    ngOnInit(): void {
-        this.GetRepositorios();
-    }
+  ngOnInit(): void {
+  }
 
-    public async GetRepositorios(){
-        await this.Api.get("Repositorios").then((res)=>{
-           this.column=res
-          this.displayedColumns=Object.keys(this.column[0])
-          //this.loadTable([res[0]])
-          this.dataSource.data=res
-        });
-        this.dataSource.paginator=this.paginator;
-        this.dataSource.sort=this.sort;
-    }
-
-    //loadTable(data:any[]){
-      //for (let column in data[0]){
-        //this.displayedColumns.push(column)
-      //}
-    //}
-
-    applyFilter(event: Event) {
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-  
-      if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
-      }
-    }
+  openModal() {
+    const dialogRef = this.dialog.open(FormRepositorioComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   }
   

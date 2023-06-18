@@ -1,0 +1,116 @@
+<form [formGroup]="FormUsuario" novalidate (ngSubmit)="edit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombres" formControlName="Nombres">
+            <mat-error *ngIf="FormUsuario.controls['Nombres'].hasError('required')">
+              Nombres is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellidos" formControlName="Apellidos">
+            <mat-error *ngIf="FormUsuario.controls['Apellidos'].hasError('required')">
+              Apellidos is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Documento" formControlName="Documento">
+            <mat-error *ngIf="FormUsuario.controls['Documento'].hasError('required')">
+              Documento is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cargo" formControlName="Cargo">
+            <mat-error *ngIf="FormUsuario.controls['Cargo'].hasError('required')">
+              Cargo is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Rol" formControlName="Rol" >
+              <mat-option *ngFor="let Rol of Rol" [value]="Rol.name">
+                {{ Rol.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="FormUsuario.controls['Rol'].hasError('required')">
+              Rol is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select  placeholder="Area" formControlName="Area">
+              <mat-option *ngFor="let Area of Area" [value]="Area.name">
+                {{ Area.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="FormUsuario.controls['Area'].hasError('required')">
+              Area is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Correo" formControlName="Correo">
+            <mat-error *ngIf="FormUsuario.controls['Correo'].hasError('required')">
+              Correo is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono" formControlName="Telefono">
+            <mat-error *ngIf="FormUsuario.controls['Telefono'].hasError('required')">
+              Telefono is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Estado" formControlName="Estado">
+              <mat-option *ngFor="let Estado of Estado" [value]="Estado.name">
+                {{ Estado.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="FormUsuario.controls['Estado'].hasError('required')">
+              Estado is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fecha" formControlName="Fecha">
+            <mat-error *ngIf="FormUsuario.controls['Fecha'].hasError('required')">
+              Fecha is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Enviar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

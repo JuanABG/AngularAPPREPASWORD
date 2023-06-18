@@ -1,0 +1,46 @@
+<!--<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form [formGroup]="loginForm" (ngSubmit)="onSumbit()">
+                <h1> Ingresar</h1>
+
+                <input type="text" placeholder="email" formControlName="username"/>
+                <mat-error *ngIf="loginForm.controls['username'].hasError('required')">
+                    <strong>Requerido</strong>
+                </mat-error>
+
+                <input type="password" placeholder="password" formControlName="password"/>
+                <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                    <strong>Requerido</strong>
+                </mat-error>
+                <a href="#">¿Olcido su contraseña?</a>
+                <button calss="submit"type="submit" mat-input>Ingresar</button>
+            </form>
+        </div>
+    </div>
+</body> -->
+
+
+<body class="Fondo">
+  <div class="container">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSumbit()">
+      <input id="signin" type="radio" name="tab" checked="checked" />
+      <input id="register" type="radio" name="tab" />
+      <div class="pages">
+        <div class="page">
+          <div class="input">
+            <div class="title"><i class="material-icons">account_box</i> Usuario</div>
+            <input class="text" type="text" placeholder="usuario" formControlName="username" />
+          </div>
+          <div class="input">
+            <div class="title"><i class="material-icons">lock</i> Contraseña</div>
+            <input class="text" type="password" placeholder="contraseña" formControlName="password" />
+          </div>
+          <div class="input">
+            <input type="submit" value="ENTER" />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
